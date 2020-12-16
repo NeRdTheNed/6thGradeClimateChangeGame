@@ -25,10 +25,10 @@ public class NewRobot2 : MonoBehaviour {
 			if (transform.position.x == getTo | transform.position.x >= getTo)
 			{ 
 			transform.position = new Vector3(-getTo, transform.position.y, transform.position.z);
-				Vector3 v = rigidbody2D.velocity;
+				/*Vector3 v = rigidbody2D.velocity;
 				v.x = 0.0f;
 				v.y = 0.0f;
-				rigidbody2D.velocity = v;
+				rigidbody2D.velocity = v;*/
 			}
 			int layerMask = 1 << 8;
 			layerMask = ~layerMask;
