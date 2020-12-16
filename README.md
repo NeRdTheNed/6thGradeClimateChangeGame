@@ -1,5 +1,5 @@
 # Climate Change Game
-<p align="center"> <img src="Assets/Pics/Dramatic/Snip 2 2.png" alt="Climate Change Game" title="Climate Change Game" style='width: 100%; object-fit: contain'/> </p>
+<p align="center"> <img src="Assets/Pics/Dramatic/Snip 2 2.png" alt="Climate Change Game" title="Authentic 6th grade screenshot" style='width: 100%; object-fit: contain'/> </p>
 
 In 6th grade, I made this game for a school project. I'm still salty over not winning the technology award at the end of the year.
 
