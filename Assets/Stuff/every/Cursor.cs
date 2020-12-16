@@ -5,13 +5,12 @@ public class Cursor : MonoBehaviour {
 
 
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		Screen.showCursor = true;
-	}
+    // Use this for initialization
+    void Start () {
+    }
+
+    // Update is called once per frame
+    void Update () {
+        Screen.showCursor = true;
+    }
 }

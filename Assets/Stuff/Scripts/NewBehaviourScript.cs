@@ -8,93 +8,96 @@ using System.Collections;
 //When C# Smart Indentation is enabled, the Tab key re-indents the current line.
 
 public class NewBehaviourScript : MonoBehaviour {
-	public float upForce = 80.0f;
-	public float sideForce = 75.0f;
-	public string rightKeyMove = "right";
-	public string leftKeyMove = "left";
-	public string upKeyMove = "up";
-	public string downKeyMove = "down";
-	public float minusUp = 5;
-	public float jumpNum = 2;
+    public float upForce = 80.0f;
+    public float sideForce = 75.0f;
+    public string rightKeyMove = "right";
+    public string leftKeyMove = "left";
+    public string upKeyMove = "up";
+    public string downKeyMove = "down";
+    public float minusUp = 5;
+    public float jumpNum = 2;
 
-	public float upMoveNow;
-	public bool check1;
-	public bool check2 = false;
+    public float upMoveNow;
+    public bool check1;
+    public bool check2 = false;
 
-	public bool check3 = false;
+    public bool check3 = false;
 
-	public bool work = true;
+    public bool work = true;
 
-	public float computeJumpNum;
-	public float test = 0;
+    public float computeJumpNum;
+    public float test = 0;
 
-	public float distance = 0.1f;
-	// Use this for initialization
-	void Start () {
-		if (work == true){
-			computeJumpNum = (jumpNum - test);}
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, distance);
-		if (hit.collider != null)
-		{
-			computeJumpNum = (jumpNum - test);
-		}
-	}
+    public float distance = 0.1f;
+    // Use this for initialization
+    void Start () {
+        if (work == true) {
+            computeJumpNum = (jumpNum - test);
+        }
+    }
 
-	void FixedUpdate () 
-	{
+    // Update is called once per frame
+    void Update () {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, distance);
 
-		if (work == true) {
+        if (hit.collider != null) {
+            computeJumpNum = (jumpNum - test);
+        }
+    }
 
+    void FixedUpdate () {
+        if (work == true) {
+            if (check1 == false) {
+                upMoveNow = upForce;
+                check1 = true;
+            }
 
-						if (check1 == false) {
-								upMoveNow = upForce;
-								check1 = true;
-						}
+            if (Input.GetKey (rightKeyMove)) {
+                rigidbody2D.AddForce (new Vector2 (sideForce, 0));
+            }
 
+            if (Input.GetKey (leftKeyMove)) {
+                rigidbody2D.AddForce (new Vector2 (-sideForce, 0));
+            }
 
-						if (Input.GetKey (rightKeyMove)) {
-								rigidbody2D.AddForce (new Vector2 (sideForce, 0));
-						}
-						if (Input.GetKey (leftKeyMove)) {
-								rigidbody2D.AddForce (new Vector2 (-sideForce, 0));
-						}
-						//Jump num decraese	
-						//Jump reset
+            //Jump num decraese
+            //Jump reset
 
-						if (Input.GetKey (upKeyMove) && computeJumpNum >= 0) {
-								rigidbody2D.AddForce (new Vector2 (0, upMoveNow));
-						}
-						if ((Input.GetKey (upKeyMove)) == true && (check2 == false) == true) {
-								upMoveNow = upMoveNow - minusUp;
-								if (upMoveNow <= 0) {
-										upMoveNow = 0;
-								}
-						}
-						if (Input.GetKeyUp (upKeyMove)) {
-								upMoveNow = upForce;
-						}
+            if (Input.GetKey (upKeyMove) && computeJumpNum >= 0) {
+                rigidbody2D.AddForce (new Vector2 (0, upMoveNow));
+            }
 
-						if ((Input.GetKeyDown (upKeyMove)) == true && (check3 == false) == true) {
-								computeJumpNum--;
-								if (computeJumpNum <= -1) {
-										computeJumpNum = -1;
-								}
-						}
-						//Math.Abs
-						if (Input.GetKey (downKeyMove)) {
-								float down;
-								down = (upForce - 20);
-								if (down <= 0) {
-										down = 0;
-								}
-								rigidbody2D.AddForce (new Vector2 (0, -down));
-						}
+            if ((Input.GetKey (upKeyMove)) == true && (check2 == false) == true) {
+                upMoveNow = upMoveNow - minusUp;
 
+                if (upMoveNow <= 0) {
+                    upMoveNow = 0;
+                }
+            }
 
-				}
-	}
+            if (Input.GetKeyUp (upKeyMove)) {
+                upMoveNow = upForce;
+            }
+
+            if ((Input.GetKeyDown (upKeyMove)) == true && (check3 == false) == true) {
+                computeJumpNum--;
+
+                if (computeJumpNum <= -1) {
+                    computeJumpNum = -1;
+                }
+            }
+
+            //Math.Abs
+            if (Input.GetKey (downKeyMove)) {
+                float down;
+                down = (upForce - 20);
+
+                if (down <= 0) {
+                    down = 0;
+                }
+
+                rigidbody2D.AddForce (new Vector2 (0, -down));
+            }
+        }
+    }
 }
