@@ -67,7 +67,7 @@ public class Doormove3 : MonoBehaviour {
 		{
 			spriteRenderer.sprite = sprite2; 
 		RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.right, distance);
-			if (hit.collider.tag == thingDetected) {
+			if ((hit.collider != null) && (hit.collider.tag == thingDetected)) {
 			Application.LoadLevel(moveTo);
 			if (debug == true)
 			{

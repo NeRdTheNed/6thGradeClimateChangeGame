@@ -26,7 +26,7 @@ public class Switch : MonoBehaviour {
 		RaycastHit2D hit3 = Physics2D.Raycast(transform.position, -Vector2.up, distance);
 		RaycastHit2D hit4 = Physics2D.Raycast(transform.position, Vector2.up, distance);
 
-		if (hit.collider.tag == thingDetected | hit2.collider.tag == thingDetected | hit3.collider.tag == thingDetected | hit4.collider.tag == thingDetected) {
+		if ((hit.collider != null) && (hit.collider.tag == thingDetected | hit2.collider.tag == thingDetected | hit3.collider.tag == thingDetected | hit4.collider.tag == thingDetected)) {
 			on = false;
 			if (switchDebug == true)
 			{
