@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{A71BCAE1-A9C8-4859-A74B-8EB2D8898030}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_5_4;UNITY_4_5;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Difficulty\LevelSelector.cs" />
+     <Compile Include="Assets\Difficulty\Transitions\Skip.cs" />
+     <Compile Include="Assets\Stuff\Scripts\Button.cs" />
+     <Compile Include="Assets\Stuff\Scripts\ButtonController.cs" />
+     <Compile Include="Assets\Stuff\Scripts\Cloud.cs" />
+     <Compile Include="Assets\Stuff\Scripts\Doormove.cs" />
+     <Compile Include="Assets\Stuff\Scripts\Doormove2.cs" />
+     <Compile Include="Assets\Stuff\Scripts\Doormove3.cs" />
+     <Compile Include="Assets\Stuff\Scripts\DoormoveDif.cs" />
+     <Compile Include="Assets\Stuff\Scripts\DoormoveMenu.cs" />
+     <Compile Include="Assets\Stuff\Scripts\DramaMove.cs" />
+     <Compile Include="Assets\Stuff\Scripts\DramaMove2.cs" />
+     <Compile Include="Assets\Stuff\Scripts\LOSEMOVE.cs" />
+     <Compile Include="Assets\Stuff\Scripts\LoaderLeveler.cs" />
+     <Compile Include="Assets\Stuff\Scripts\Music.cs" />
+     <Compile Include="Assets\Stuff\Scripts\MyPersistentThing.cs" />
+     <Compile Include="Assets\Stuff\Scripts\MyPersistentThing2.cs" />
+     <Compile Include="Assets\Stuff\Scripts\MyPersistentThing3.cs" />
+     <Compile Include="Assets\Stuff\Scripts\NewBehaviourScript.cs" />
+     <Compile Include="Assets\Stuff\Scripts\NewBehaviourScript1.cs" />
+     <Compile Include="Assets\Stuff\Scripts\NewBehaviourScript2.cs" />
+     <Compile Include="Assets\Stuff\Scripts\NewBehaviourScriptM.cs" />
+     <Compile Include="Assets\Stuff\Scripts\NewRobot.cs" />
+     <Compile Include="Assets\Stuff\Scripts\NewRobot2.cs" />
+     <Compile Include="Assets\Stuff\Scripts\ObjectLabel.cs" />
+     <Compile Include="Assets\Stuff\Scripts\Pause.cs" />
+     <Compile Include="Assets\Stuff\Scripts\Robot.cs" />
+     <Compile Include="Assets\Stuff\Scripts\Sound.cs" />
+     <Compile Include="Assets\Stuff\Scripts\Switch.cs" />
+     <Compile Include="Assets\Stuff\Scripts\SwitchOther.cs" />
+     <Compile Include="Assets\Stuff\every\Cursor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{EDF5B886-FD84-AADB-1198-251027A656B6}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{AF5B0201-B4C6-7151-C8AC-235D5A9FCE73}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
