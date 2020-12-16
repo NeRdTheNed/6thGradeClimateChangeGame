@@ -15,7 +15,7 @@ public class Doormove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.right, distance);
-		if (hit.collider.tag == thingDetected) {
+		if ((hit.collider != null) && (hit.collider.tag == thingDetected)) {
 			Application.LoadLevel(moveTo);
 			if (debug == true)
 			{
