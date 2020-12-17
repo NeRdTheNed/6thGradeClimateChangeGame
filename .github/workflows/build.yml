@@ -10,7 +10,7 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - ./
+          - .
         unityVersion:
           - 2020.1.13f1
         targetPlatform:
@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+          with:
+            ref: ${{ github.ref }}
       - name: Cache files
         uses: actions/cache@v1.1.0
         with:
