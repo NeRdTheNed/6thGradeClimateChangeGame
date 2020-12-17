@@ -1,11 +1,7 @@
 name: Unity 2020.1.13f1 CI
 on:
-  push:
-    branches:
-      - [2020, gh_actions_tests]
-  pull_request:
-    branches:
-      - [2020, gh_actions_tests]
+  pull_request: { branches: [2020, gh_actions_tests] }
+  push: { branches: [2020, gh_actions_tests] }
 jobs:
   build:
     runs-on: ubuntu-latest
