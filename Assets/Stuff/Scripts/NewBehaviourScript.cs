@@ -43,6 +43,20 @@ public class NewBehaviourScript : MonoBehaviour {
         if (hit.collider != null) {
             computeJumpNum = (jumpNum - test);
         }
+
+        // hacks
+
+        if (Input.GetKeyUp (upKeyMove)) {
+            upMoveNow = upForce;
+        }
+
+        if ((Input.GetKeyDown (upKeyMove)) == true && (check3 == false) == true) {
+            computeJumpNum--;
+
+            if (computeJumpNum <= -1) {
+                computeJumpNum = -1;
+            }
+        }
     }
 
     void FixedUpdate () {
@@ -72,18 +86,6 @@ public class NewBehaviourScript : MonoBehaviour {
 
                 if (upMoveNow <= 0) {
                     upMoveNow = 0;
-                }
-            }
-
-            if (Input.GetKeyUp (upKeyMove)) {
-                upMoveNow = upForce;
-            }
-
-            if ((Input.GetKeyDown (upKeyMove)) == true && (check3 == false) == true) {
-                computeJumpNum--;
-
-                if (computeJumpNum <= -1) {
-                    computeJumpNum = -1;
                 }
             }
 
