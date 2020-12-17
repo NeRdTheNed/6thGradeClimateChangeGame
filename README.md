@@ -1,5 +1,7 @@
-# Climate Change Game
+# Climate Change Game - WIP Unity 2020 edition!
 <p align="center"> <img src="Assets/Pics/Dramatic/Snip 2 2.png" alt="Climate Change Game" title="Authentic 6th grade screenshot" style='width: 100%; object-fit: contain'/> </p>
+
+_Unity 2020 edition not finished yet! TODO: More text here._
 
 In 2014 (when I was in 6th grade), I made this game for a school project. I'm still salty over not winning the technology award at the end of the year.
 
