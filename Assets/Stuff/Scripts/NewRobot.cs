@@ -17,14 +17,14 @@ public class NewRobot : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate () {
         if (work == true) {
-            rigidbody2D.AddForce (new Vector2 (sideForce, 0));
+            GetComponent<Rigidbody2D>().AddForce (new Vector2 (sideForce, 0));
 
             if (transform.position.x == getTo | transform.position.x >= getTo) {
                 transform.position = new Vector3(-getTo, transform.position.y, transform.position.z);
-                Vector3 v = rigidbody2D.velocity;
+                Vector3 v = GetComponent<Rigidbody2D>().velocity;
                 v.x = 0.0f;
                 v.y = 0.0f;
-                rigidbody2D.velocity = v;
+                GetComponent<Rigidbody2D>().velocity = v;
             }
 
             int layerMask = 1 << 8;

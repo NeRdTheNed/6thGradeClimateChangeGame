@@ -34,11 +34,11 @@ public class Robot : MonoBehaviour {
             }
 
             if (right == true) {
-                rigidbody2D.AddForce (new Vector2 (sideForce, 0));
+                GetComponent<Rigidbody2D>().AddForce (new Vector2 (sideForce, 0));
             }
 
             if (left == true) {
-                rigidbody2D.AddForce (new Vector2 (-sideForce, 0));
+                GetComponent<Rigidbody2D>().AddForce (new Vector2 (-sideForce, 0));
             }
         }
     }

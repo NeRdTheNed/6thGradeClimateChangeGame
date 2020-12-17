@@ -53,18 +53,18 @@ public class NewBehaviourScript : MonoBehaviour {
             }
 
             if (Input.GetKey (rightKeyMove)) {
-                rigidbody2D.AddForce (new Vector2 (sideForce, 0));
+                GetComponent<Rigidbody2D>().AddForce (new Vector2 (sideForce, 0));
             }
 
             if (Input.GetKey (leftKeyMove)) {
-                rigidbody2D.AddForce (new Vector2 (-sideForce, 0));
+                GetComponent<Rigidbody2D>().AddForce (new Vector2 (-sideForce, 0));
             }
 
             //Jump num decraese
             //Jump reset
 
             if (Input.GetKey (upKeyMove) && computeJumpNum >= 0) {
-                rigidbody2D.AddForce (new Vector2 (0, upMoveNow));
+                GetComponent<Rigidbody2D>().AddForce (new Vector2 (0, upMoveNow));
             }
 
             if ((Input.GetKey (upKeyMove)) == true && (check2 == false) == true) {
@@ -96,7 +96,7 @@ public class NewBehaviourScript : MonoBehaviour {
                     down = 0;
                 }
 
-                rigidbody2D.AddForce (new Vector2 (0, -down));
+                GetComponent<Rigidbody2D>().AddForce (new Vector2 (0, -down));
             }
         }
     }

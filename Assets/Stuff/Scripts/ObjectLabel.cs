@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent (typeof (GUIText))]
+[RequireComponent (typeof (UnityEngine.UI.Text))]
 public class ObjectLabel : MonoBehaviour {
 
     public Transform target;  // Object that this label should follow

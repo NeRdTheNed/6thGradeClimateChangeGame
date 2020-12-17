@@ -11,6 +11,6 @@ public class Cursor : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        Screen.showCursor = true;
+        UnityEngine.Cursor.visible = true;
     }
 }
