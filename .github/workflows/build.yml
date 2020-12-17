@@ -15,19 +15,10 @@ jobs:
           - 2020.1.13f1
         targetPlatform:
           - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
+          - StandaloneWindows # Build a Windows standalone.
+          - StandaloneWindows64 # Build a Windows 64-bit standalone.
+          - StandaloneLinux64 # Build a Linux 64-bit standalone.
     steps:
-      # Request manual activation file
-      - name: Request manual activation file
-        id: getManualLicenseFile
-        uses: webbertakken/unity-request-manual-activation-file@v1.1
-        with:
-          unityVersion: 2020.1.13f1
-       # Upload artifact (Unity_v20XX.X.XXXX.alf)
-      - name: Expose as artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: ${{ steps.getManualLicenseFile.outputs.filePath }}
-          path: ${{ steps.getManualLicenseFile.outputs.filePath }}
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
