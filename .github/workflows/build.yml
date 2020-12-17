@@ -21,8 +21,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-          with:
-            ref: ${{ github.ref }}
+        with:
+          ref: ${{ github.ref }}
       - name: Cache files
         uses: actions/cache@v1.1.0
         with:
