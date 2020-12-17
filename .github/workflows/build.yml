@@ -21,6 +21,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: Cache files
+        uses: actions/cache@v1.1.0
+        with:
+          path: ${{ matrix.projectPath }}/Library
+          key: Library-${{ matrix.projectPath }}-${{ matrix.targetPlatform }}
+          restore-keys: |
+            Library-${{ matrix.projectPath }}-
+            Library-
       - name: Build
         uses: game-ci/unity-builder@v2.0-aplha-5
         env:
@@ -32,5 +40,5 @@ jobs:
       - name: Upload built artifacts 
         uses: actions/upload-artifact@v1
         with:
-          name: Build
+          name: Build-${{ matrix.targetPlatform }}
           path: build
