@@ -1,0 +1,44 @@
+name: Unity 2020.1.13f1 CI
+on:
+  pull_request: { branches: [2020, gh_actions_tests] }
+  push: { branches: [2020, gh_actions_tests] }
+jobs:
+  build:
+    name: Build for ${{ matrix.targetPlatform }} on version ${{ matrix.unityVersion }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        projectPath:
+          - ./
+        unityVersion:
+          - 2020.1.13f1
+        targetPlatform:
+          - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
+          - StandaloneWindows # Build a Windows standalone.
+          - StandaloneWindows64 # Build a Windows 64-bit standalone.
+          - StandaloneLinux64 # Build a Linux 64-bit standalone.
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Cache files
+        uses: actions/cache@v1.1.0
+        with:
+          path: ${{ matrix.projectPath }}/Library
+          key: Library-${{ matrix.projectPath }}-${{ matrix.targetPlatform }}
+          restore-keys: |
+            Library-${{ matrix.projectPath }}-
+            Library-
+      - name: Build
+        uses: game-ci/unity-builder@v2.0-aplha-5
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          projectPath: ${{ matrix.projectPath }}
+          unityVersion: ${{ matrix.unityVersion }}
+          targetPlatform: ${{ matrix.targetPlatform }}
+      - name: Upload built artifacts 
+        uses: actions/upload-artifact@v1
+        with:
+          name: Build-${{ matrix.targetPlatform }}
+          path: build
